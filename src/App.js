@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import TodoForm from './components/TodoForm';
+import TodoItem from './components/TodoItem';
 
 class App extends React.Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class App extends React.Component {
 
     this.handleAdd = this.handleAdd.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   render() {
@@ -24,7 +26,7 @@ class App extends React.Component {
           <div className="App-content">
             <div className="App-todo-list">
               <ul>
-                {this.renderList()} 
+                {this.state.list}
               </ul>
             </div>
             <div className="App-todo-add">
@@ -36,24 +38,25 @@ class App extends React.Component {
     );
   }
 
-  renderList() {
-    return (
-      this.state.list.map((l, i) => {
-        return <li key={i}>{l}</li>;
-      })
-    );
-  }
-
   handleAdd() {
     const value = this.state.value.trim();
     if (!value) return;
     let list = [...this.state.list];
-    list[list.length] = value;
+    const d = Date.now();
+    list[list.length] = <TodoItem key={d} id={d} value={value} onClick={this.handleDelete}/>;
     this.setState({ list: list, value: '' });
   }
 
   handleChange(value) {
     this.setState({ value: value });
+  }
+
+  handleDelete(id) {
+    const list = this.state.list.filter((todo) => {
+      return todo.props.id !== id;
+    });
+
+    this.setState({ list: list });
   }
 }
 
