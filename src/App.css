@@ -41,8 +41,8 @@ h1 {
 .App-todo-list {
   flex: 1 1 auto;
   overflow-y: auto;
-  border-top: white;
   color: white;
+  height: 0;
   padding: 4vmin 4vmin;
 }
 
@@ -51,4 +51,11 @@ h1 {
   padding: 4vmin 4vmin;
   display: flex;
   justify-content: center;
+}
+
+ul {
+  list-style-position: outside;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
