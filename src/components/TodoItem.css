@@ -2,15 +2,12 @@
     display: flex;
     justify-content: space-between;
     padding: 2vh;
+    word-break: break-word;
 }
 
 .todo-item:hover {
     background-color: rgb(73, 73, 90);
     border-radius: 0.5vh;
-}
-
-.todo-text {
-
 }
 
 .todo-text:hover {
