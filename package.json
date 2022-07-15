@@ -1,7 +1,7 @@
 {
   "name": "todo-app-react-dct0",
   "version": "0.1.0",
-  "homepage": "https://codersforlearning.github.io/todo-app-react-dct0/",
+  "homepage": "https://todo.gum-e.live/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
